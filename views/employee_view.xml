@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 eagle-erp Consulting Service Pvt.Ltd (<http://www.eagle-erpcs.com>).
+
+For Module Support : eagle-erp@gmail.com  or Skype : eagle-erp
+ -->
+<odoo>
+  <record id="employee_inherited_sequence_view" model="ir.ui.view">
+	 <field name="name">employee.inherited.sequence.view</field>
+	 <field name="model">hr.employee</field>
+	 <field name="inherit_id" ref="hr.view_employee_form"/>
+	 <field name="arch" type="xml">
+		 <xpath expr="//field[@name = 'mobile_phone']" position="after">
+			    <field name="credit_limit"/>
+				 <field name="emp_seq"/><br/>
+				 <field name="emp_id"/>
+				 <field name="personal_number"/>
+				 <field name="comapany_name"/>
+				 <field name="nid_number"/>
+				 <field name="status"/>
+				 <field name="working_area"/>
+				 <field name="orderd_by"/>
+		 </xpath>
+		 <xpath expr="//field[@name = 'mobile_phone']" position="attributes">
+				<attribute name="string">Corporate Number</attribute>
+		 </xpath>
+	</field>
+ </record>
+
+	  <record id="employee_inherited_sequence_view_tree" model="ir.ui.view">
+		 <field name="name">employee.inherited.sequence.view.tree</field>
+		 <field name="model">hr.employee</field>
+		 <field name="inherit_id" ref="hr.view_employee_tree"/>
+		 <field name="arch" type="xml">
+			 <xpath expr="//field[@name = 'mobile_phone']" position="attributes">
+					<attribute name="string">Corporate Number</attribute>
+			 </xpath>
+		</field>
+ 	</record>
+
+
+</odoo>
+
