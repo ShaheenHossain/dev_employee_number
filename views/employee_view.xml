@@ -15,7 +15,7 @@ For Module Support : eagle-erp@gmail.com  or Skype : eagle-erp
 				 <field name="emp_seq"/><br/>
 				 <field name="emp_id"/>
 				 <field name="personal_number"/>
-				 <field name="comapany_name"/>
+				 <field name="company_name"/>
 				 <field name="nid_number"/>
 				 <field name="status"/>
 				 <field name="working_area"/>
@@ -32,9 +32,14 @@ For Module Support : eagle-erp@gmail.com  or Skype : eagle-erp
 		 <field name="model">hr.employee</field>
 		 <field name="inherit_id" ref="hr.view_employee_tree"/>
 		 <field name="arch" type="xml">
-			 <xpath expr="//field[@name = 'mobile_phone']" position="attributes">
-					<attribute name="string">Corporate Number</attribute>
-			 </xpath>
+
+		 <xpath expr="//field[@name = 'work_phone']" position="replace">
+			    <field name="mobile_phone"/>
+		 </xpath>
+
+		 <xpath expr="//field[@name = 'mobile_phone']" position="attributes">
+				<attribute name="string">Corporate Number</attribute>
+		 </xpath>
 		</field>
  	</record>
 
